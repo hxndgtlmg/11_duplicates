@@ -3,9 +3,9 @@ import os
 
 def crawl(path):
     files_dict = {}
-    for (dirpath, dirnames, filenames) in os.walk(path):
-        for file in filenames:
-            file_path = os.path.join(dirpath, file)
+    for (dir_path, dir_names, file_names) in os.walk(path):
+        for file in file_names:
+            file_path = os.path.join(dir_path, file)
             if files_dict.get(file) is None:
                 files_dict[file] = {'size': os.path.getsize(file_path),
                                     'path': file_path}
